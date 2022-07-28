@@ -12,7 +12,7 @@
     --update-background: #14C38E;
 
     --add-color: white;
-    --add-background:#0D6EFD;
+    --add-background: #0D6EFD;
 
 }
 
@@ -673,10 +673,12 @@ form {
     width: 100%;
     height: 60px;
 }
-.box{
+
+.box {
     margin-bottom: 10px;
 }
-.box-heading{
+
+.box-heading {
 
     margin-bottom: 5px;
 }
@@ -734,7 +736,7 @@ form {
 .button.update-colors:hover {
     background-color: var(--update-background);
     color: var(--update-color);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .button.delete-colors:hover {
@@ -743,12 +745,14 @@ form {
     opacity: 0.7;
 
 }
-.button.add-colors:hover{
+
+.button.add-colors:hover {
     background-color: var(--add-background);
     color: var(--add-color);
     opacity: 0.7;
 }
-.button.add-colors{
+
+.button.add-colors {
     background-color: var(--add-background);
     color: var(--add-color);
 }
