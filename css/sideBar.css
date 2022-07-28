@@ -11,6 +11,9 @@
     --update-color: white;
     --update-background: #14C38E;
 
+    --add-color: white;
+    --add-background:#0D6EFD;
+
 }
 
 *, ::after, ::before {
@@ -533,7 +536,7 @@ html, body {
 
 .sidebar li a {
     display: inline-block !important;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 900;
 
 }
@@ -560,7 +563,7 @@ nav ul li {
 
 nav a {
     position: relative;
-    font-size: 18px !important;
+    font-size: 17px !important;
     font-weight: 800;
 }
 
@@ -601,9 +604,9 @@ form {
 
 .button {
     text-transform: capitalize;
-
+    text-decoration: none;
     background-color: var(--main-color);
-    color: var(--second-color);
+    color: var(--second-color) !important;
     border: 2px transparent solid;
     border-radius: 10px;
     padding: 8px 14px;
@@ -740,5 +743,13 @@ form {
     opacity: 0.7;
 
 }
-
+.button.add-colors:hover{
+    background-color: var(--add-background);
+    color: var(--add-color);
+    opacity: 0.7;
+}
+.button.add-colors{
+    background-color: var(--add-background);
+    color: var(--add-color);
+}
 
