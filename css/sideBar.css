@@ -690,9 +690,9 @@ form {
 
 }
 
-.box-dark button:hover {
-    background-color: var(--second-color);
-    color: var(--main-color);
+.box-dark button:hover,.sidebar-dark button:hover {
+    background-color: var(--second-color) !important;
+    color: var(--main-color) !important;
 
 }
 
