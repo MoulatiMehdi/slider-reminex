@@ -663,7 +663,7 @@ form {
 }
 
 #add-image img {
-    max-width: 100px;
+    max-width: 90px;
     padding-bottom: 10px;
 }
 
@@ -756,4 +756,3 @@ form {
     background-color: var(--add-background);
     color: var(--add-color);
 }
-
