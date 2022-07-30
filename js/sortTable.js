@@ -1,3 +1,4 @@
+// Sort the table By ASCII characters (increasing or decreasing)
 function sortTable(n) {
 
     let table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
@@ -69,4 +70,37 @@ function sortTable(n) {
         sort_icon.className = "fa-solid fa-sort fa-2xs "
     }
     rows[0].getElementsByTagName('i')[n].className = (dir === "asc" ? "fa-solid fa-sort-up fa-2xs opacity-100" : "fa-solid fa-sort-down fa-2xs opacity-100")
+}
+
+// find all the rows that match the input in the given table name
+function findInTable(string, tableId) {
+    let table, rows;
+
+    // remove spaces (if started or ended by spaces) from string
+    string = string.replace(/(^\s)|(\s$)/g, "").toLowerCase()
+
+    table = document.getElementById(tableId)
+
+    // table exist ?
+    if (table !== undefined) {
+
+        rows = table.rows;
+        let nbrRows = rows.length
+
+        // not in the input ?
+        if (string === "") {
+            for (let i = 1; i < nbrRows; i++) {
+                rows[i].style.display = "table-row";
+            }
+        } else {
+            for (let i = 1; i < nbrRows; i++) {
+                if (rows[i].innerText.toLowerCase().includes(string))
+                    rows[i].style.display = 'table-row'
+                else
+                    rows[i].style.display = 'none'
+            }
+        }
+    }
+
+
 }

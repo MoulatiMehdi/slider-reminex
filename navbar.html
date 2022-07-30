@@ -60,14 +60,15 @@
 
         <div class="dropdown text-end">
             <div class="user-name">
-                <span class="pe-3">Mehdi Moulati</span>
-                <a href="#" class="d-block link-dark text-decoration-none" data-bs-toggle="dropdown"
+                <span class="pe-3 text-light">Mehdi Moulati</span>
+                <a href="#" class="d-block link-dark text-decoration-none" style="width: 48px;height: 48px"
+                   data-bs-toggle="dropdown"
                    aria-expanded="false">
 
                     <img src="https://github.com/mdo.png" alt="mdo" width="48" height="48"
                          class="rounded-circle border border-light border-3">
                 </a>
-                <ul class="dropdown-menu text-smaller">
+                <ul class="dropdown-menu bg-warning text-smaller">
                     <li>
                         <a class="dropdown-item" href="#">
                             <i class="fa-solid fa-address-card"></i>
@@ -96,18 +97,26 @@
 </header>
 
 <div id="content-wrapper" class="px-5 py-2 container">
-    <table id="sortTab" class="table table-striped table-bordered nowrap rounded-3" style="width:100%">
+    <div class="text-center p-5">
+        <span class="text-center text-secondary">What are looking for inside the table?</span>
+        <form class="d-flex" role="search">
+            <input id="find" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" oninput="findInTable(this.value,'sortTab')">
+            <button class="button" type="submit">Search</button>
+        </form>
+    </div>
+
+    <table id="sortTab" class="table table-striped table-bordered nowrap rounded-3" style="width:100%" >
         <thead>
         <tr>
-            <th role="button" onclick="sortTable(0)"> First name <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(1)"> Last name  <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(2)"> Position   <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(3)"> Office     <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(4)"> Age        <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(5)"> Start date <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(6)"> Salary     <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(7)"> Extn.      <i  class="fa-solid fa-sort fa-2xs"></i> </th>
-            <th role="button" onclick="sortTable(8)"> E-mail     <i  class="fa-solid fa-sort fa-2xs"></i> </th>
+            <th role="button" onclick="sortTable(0)"> First name <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(1)"> Last name <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(2)"> Position <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(3)"> Office <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(4)"> Age <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(5)"> Start date <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(6)"> Salary <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(7)"> Extn. <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(8)"> E-mail <i class="fa-solid fa-sort fa-2xs"></i></th>
         </tr>
         </thead>
         <tbody>
@@ -762,6 +771,6 @@
 <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 
 <!-- sort Table JS-->
-<script src="js/sortTable.js"> </script>
+<script src="js/sortTable.js"></script>
 
 </html>
