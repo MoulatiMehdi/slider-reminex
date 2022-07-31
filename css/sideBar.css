@@ -84,7 +84,7 @@ header nav a {
 
 /*}*/
 
-hr{
+nav li a hr{
     display: none;
 }
 form {
