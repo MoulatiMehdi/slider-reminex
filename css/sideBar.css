@@ -20,7 +20,8 @@
 }
 
 *, ::after, ::before {
-    box-sizing: border-box
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
 }
 
 html, body {
@@ -39,13 +40,19 @@ header nav ul {
     padding: 0;
 }
 
+header .nav-link{
+    padding: 7px 20px !important;
+    margin: 0 10px;
+    transition: 0.4s ease-out;
+    border-radius: 30px;
 
-* {
-    font-family: 'Nunito', sans-serif;
 }
 
-header .nav-item {
-    padding: 0 30px;
+header .nav-link.active, .nav-link:hover:not(:disabled) {
+    background-color: var(--main-color);
+    color: var(--second-color);
+    transition: 0.4s ease-in;
+
 }
 
 header nav a {
@@ -56,28 +63,30 @@ header nav a {
 
 }
 
-header nav a hr {
-    position: absolute;
-    opacity: 1 !important;
-    margin: 0;
-    width: 0;
-    height: 3px;
-    border-radius: 4px;
-    transition: ease-in 0.3s;
-    right: 0 !important;
-    background-color: var(--main-color);
-    color: var(--main-color);;
+/*header nav a hr {*/
+/*    position: absolute;*/
+/*    opacity: 1 !important;*/
+/*    margin: 0;*/
+/*    width: 0;*/
+/*    height: 3px;*/
+/*    border-radius: 4px;*/
+/*    transition: ease-in 0.3s;*/
+/*    right: 0 !important;*/
+/*    background-color: var(--main-color);*/
+/*    color: var(--main-color);;*/
 
+/*}*/
+
+/*header nav li:hover a hr {*/
+/*    left: 0 !important;*/
+/*    width: 100%;*/
+/*    transition: 0.6s ease-out;*/
+
+/*}*/
+
+hr{
+    display: none;
 }
-
-header nav li:hover a hr {
-    left: 0 !important;
-    width: 100%;
-    transition: 0.6s ease-out;
-
-}
-
-
 form {
     padding: 10px 50px;
 }
@@ -96,10 +105,6 @@ form {
 
     transition: ease-in;
 
-}
-
-.button i {
-    font-size: 17px !important;
 }
 
 
@@ -221,6 +226,7 @@ body {
 
 th {
     position: relative;
+    margin-right: 5px;
 
 }
 
@@ -232,3 +238,18 @@ thead th i::before {
     right: 0;
 }
 
+
+@media (max-width: 768px) {
+    * {
+        font-size: 13px;
+    }
+    nav .nav-link{
+        margin: 10px 0;
+    }
+
+    nav li a hr {
+        display: none;
+    }
+
+
+}
