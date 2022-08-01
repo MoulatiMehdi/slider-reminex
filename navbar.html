@@ -123,10 +123,11 @@
         <!-- Then put toasts within -->
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="/images/logo.svg" class="rounded me-auto" alt="...">
+                <img src="/images/logo.svg" class="rounded me-auto" alt="Reminex">
 
                 <small class="text-muted">just now</small>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
             </div>
             <div class="toast-body">
                 See? Just like this.
@@ -135,10 +136,11 @@
 
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
-                <img src="/images/logo.svg" class="rounded me-2" alt="...">
+                <img src="/images/logo.svg" class="rounded me-auto" alt="Reminex">
 
                 <small class="text-muted">2 seconds ago</small>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
             </div>
             <div class="toast-body">
                 Heads up, toasts will stack automatically
@@ -253,11 +255,11 @@
 
 <!-- Launch the Toasts -->
 <script>
-        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-        var toastList = toastElList.map(function(toastEl) {
-            return new bootstrap.Toast(toastEl)
-        })
-        toastList.forEach(toast => toast.show())
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    var toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl)
+    })
+    toastList.forEach(toast => toast.show())
 
 </script>
 
