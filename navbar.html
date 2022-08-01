@@ -116,17 +116,41 @@
     <div style="height: 70px"></div>
 </header>
 
-<div class="container">
+
+<div class="container py-4 position-relative" aria-live="polite" aria-atomic="true" style="height: calc(100vh - 70px)">
+    <div class="toast-container bottom-0 start-0 p-3 ">
+
+        <!-- Then put toasts within -->
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="/images/logo.svg" class="rounded me-auto" alt="...">
+
+                <small class="text-muted">just now</small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                See? Just like this.
+            </div>
+        </div>
+
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="/images/logo.svg" class="rounded me-2" alt="...">
+
+                <small class="text-muted">2 seconds ago</small>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Heads up, toasts will stack automatically
+            </div>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-sm-6 p-3 d-flex justify-content-start align-items-center">
-            <label class="form-label mb-0 me-1" for="nbrRow">Show:</label>
-            <select class="form-select " style="max-width: 200px" name="nbrRow" id="nbrRow">
-                <option value="10" selected>10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-            </select>
+            <button type="button" class="btn btn-success">
+                <i class="fa-solid fa-plus"></i> Add slider
+            </button>
         </div>
         <div class="col-sm-6 p-3 d-flex justify-content-end align-items-center">
             <label for="find" class="form-label mb-0 me-1">Search:</label>
@@ -140,16 +164,68 @@
         <thead>
         <tr>
             <th role="button" onclick="sortTable(0)"> Titre <i class="fa-solid fa-sort fa-2xs"></i></th>
-            <th role="button" onclick="sortTable(1)"> Image Position <i class="fa-solid fa-sort fa-2xs"></i></th>
-            <th role="button" onclick="sortTable(2)"> Update at <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(1)" style="width: 150px"> Image Position <i
+                    class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(2)" style="width: 120px">last Update <i
+                    class="fa-solid fa-sort fa-2xs"></i></th>
             <th role="button" onclick="sortTable(3)"> Update by <i class="fa-solid fa-sort fa-2xs"></i></th>
-            <th role="button" onclick="sortTable(4)"> Create at <i class="fa-solid fa-sort fa-2xs"></i></th>
+            <th role="button" onclick="sortTable(4)" style="width: 120px"> Create at <i
+                    class="fa-solid fa-sort fa-2xs"></i></th>
             <th role="button" onclick="sortTable(5)"> Create by <i class="fa-solid fa-sort fa-2xs"></i></th>
-            <th> Edit</th>
-            <th> Delete</th>
+            <th class="text-center" style="width: 150px">
+                Actions
+            </th>
         </tr>
         </thead>
         <tbody>
+        <tr>
+            <td>Welcome</td>
+            <td>Right</td>
+            <td>2022-07-31</td>
+            <td>Mehdi Moulati</td>
+            <td>2022-07-30</td>
+            <td>Mehdi Moulati</td>
+            <td class="">
+                <button type="button" class="btn btn-primary btn-sm mx-2">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm mx-2">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Welcome</td>
+            <td>Right</td>
+            <td>2022-07-30</td>
+            <td>Ayman kuma</td>
+            <td>2022-07-30</td>
+            <td>Mehdi Moulati</td>
+            <td class="">
+                <button type="button" class="btn btn-primary btn-sm mx-2">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm mx-2">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>Alert</td>
+            <td>Right</td>
+            <td>2022-07-30</td>
+            <td>Mehdi Moulati</td>
+            <td>2022-07-29</td>
+            <td>Achraf Foulan</td>
+            <td class="">
+                <button type="button" class="btn btn-primary btn-sm mx-2">
+                    <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-sm mx-2">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        </tr>
 
         </tbody>
     </table>
@@ -174,5 +250,15 @@
 
 <!-- sort Table JS-->
 <script src="js/sortTable.js"></script>
+
+<!-- Launch the Toasts -->
+<script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl)
+        })
+        toastList.forEach(toast => toast.show())
+
+</script>
 
 </html>
