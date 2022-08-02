@@ -107,9 +107,9 @@
     </nav>
     <div style="height: 70px"></div>
 </header>
-
-<div class="" style="height: calc(100vh - 70px)">
-    <div class="toast-container bottom-0 start-0 p-3 ">
+<!--style="height: calc(100vh - 70px)"-->
+<div aria-live="polite" aria-atomic="true" class="position-relative p-0 m-0 d-flex justify-content-center align-items-center" style="height: calc(100vh - 100px)">
+    <div class="toast-container bottom-0 start-0 p-3">
 
         <!-- Then put toasts within -->
         <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
@@ -125,78 +125,75 @@
             </div>
         </div>
     </div>
-    <div class="col container rounded bg-light profile">
-        <div class="row d-flex justify-content-around">
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img id="edit-image-display" class="rounded-circle mt-5" style="width: 100px;height: 100px"
-                         src="images/user.png" alt="">
-                    <span class="font-weight-bold">Edogaru</span>
-                    <span class="text-black-50">edogaru@mail.com.my</span>
-                    <label for="edit-image">
-                        <button class="button" id="edit-image-btn"
-                                onclick="document.getElementById('edit-image').click();">Edit Image
-                        </button>
-                    </label>
-                    <input type="file" hidden id="edit-image" onchange="readURL(this)">
-                    <script>
-                        function readURL(input) {
-                            if (input.files && input.files[0]) {
-                                var reader = new FileReader();
 
-                                reader.onload = function (e) {
-                                    $('#edit-image-display').attr('src', e.target.result);
-                                };
+    <form class="row justify-content-around" method="POST" action="/post.php" >
+        <div class="col-md-2  d-flex align-items-center justify-content-center p-3 py-5">
+            <div class="d-flex justify-content-center align-items-center flex-column">
+                <img id="edit-image-display" class="rounded-circle mb-1" style="width: 100px;height: 100px" src="images/user.png" alt="">
+                <div class="font-weight-bold text-center mb-1">Edogaru</div>
+                <div class="text-secondary text-center mb-1">edogaru@mail.com.my</div>
+                <label for="edit-image">
+                    <button  type="button" class="button" id="edit-image-btn"
+                            onclick="document.getElementById('edit-image').click();">Edit Image
+                    </button>
+                </label>
+                <input type="file" hidden id="edit-image" onchange="readURL(this)">
+                <script>
+                    function readURL(input) {
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
 
-                                reader.readAsDataURL(input.files[0]);
+                            reader.onload = function (e) {
+                                $('#edit-image-display').attr('src', e.target.result);
+                            };
 
-                            }
+                            reader.readAsDataURL(input.files[0]);
+
                         }
-                    </script>
+                    }
+                </script>
 
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h5 class="text-right">Profile Settings : </h5>
+            <div class="row px-3 py-5 box">
+
+                <div class="col-md-6 mb-3">
+
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" placeholder="full name" id="name" value="">
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="enter a username" value="" id="username">
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label class="from-label" for="email">Email</label>
+                    <input type="text" class="form-control" placeholder="enter an email" value="" id="email">
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label class="from-label" for="current_password">Old password</label>
+                    <input type="password" class="form-control" placeholder="enter your password" value="" id="current_password">
+
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label class="from-label" for="new_passowrd">password</label>
+                    <input type="password" class="form-control" value="" id="new_passowrd">
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label class="from-label" for="confirm_password">password confirmation</label>
+                    <input type="password" class="form-control" value="" id="confirm_password">
+                </div>
+                <div class="d-flex justify-content-end mb-3">
+                    <button class="btn btn-warning profile-button">Edit profile</button>
                 </div>
             </div>
-            <form class="col-md-5 border-right" method="POST" action="/post.php">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-12"><label class="labels">Name</label>
-                            <input type="text" class="form-control" placeholder="full name" value="">
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-12"><label class="labels">Username</label>
-                            <input type="text" class="form-control" placeholder="enter a username" value="">
-                        </div>
-                        <div class="col-md-12"><label class="labels">Email</label>
-                            <input type="text" class="form-control" placeholder="enter an email" value="">
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-md-12"><label class="labels">Old password</label>
-                            <input type="password" class="form-control"
-                                   placeholder="enter your password"
-                                   value=""></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">password</label><input type="password"
-                                                                                           class="form-control"
-                                                                                           value="">
-                        </div>
-                        <div class="col-md-6"><label class="labels">password confirmation</label><input type="password"
-                                                                                                        class="form-control"
-                                                                                                        value=""></div>
-                    </div>
-                    <div class="mt-5 text-center">
-                        <button class="btn btn-warning profile-button">Edit profile</button>
-                    </div>
-                </div>
-            </form>
         </div>
-    </div>
+    </form>
 </div>
+
 
 </body>
 

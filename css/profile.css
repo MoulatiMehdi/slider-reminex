@@ -1,7 +1,5 @@
 .profile{
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
-
-
 }
 
 .form-control:focus {
@@ -28,4 +26,8 @@
 .labels {
     font-size: 15px;
     color: var(--third-color);
+}
+.box{
+    border: 2px black solid ;
+    border-radius: 20px;
 }
