@@ -101,6 +101,4 @@ function findInTable(string, tableId) {
             }
         }
     }
-
-
 }

@@ -96,7 +96,7 @@ form {
     padding: 10px 50px;
 }
 
-.dropdown-menu {
+nav .dropdown-menu {
     box-shadow: 5px 5px 20px 2px rgba(0, 0, 0, 0.66);
 }
 
@@ -219,7 +219,31 @@ td {
     nav li a hr {
         display: none;
     }
-
-
 }
 
+thead tr th:last-child{
+    border-top-right-radius: 10px ;
+}
+thead tr th:first-child{
+    border-top-left-radius: 10px ;
+}
+
+tr:last-child td:first-child{
+    border-bottom-left-radius: 10px ;
+}
+
+tr:last-child td:last-child{
+    border-bottom-right-radius: 10px ;
+}
+
+table{
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    border-collapse: revert;
+}
+
+td,th{
+    vertical-align: middle;
+    width: auto;
+}
